@@ -105,6 +105,10 @@ $(document).ready(function() {
         .on('sidebar.isHiding', function() {
         });
     },
+    reloadSidebar: function() {
+      this.sidebarEl = $('.sidebar');
+      this.isSidebarVisible ? this.showSidebar() : null;
+    },
     clickHandler: function() {
       this.isSidebarVisible ? this.hideSidebar() : this.showSidebar();
       this.isSidebarVisible = !this.isSidebarVisible;
@@ -183,7 +187,7 @@ $(document).ready(function() {
       }
     }
   };
-  sidebarToggleMotion.init();
+  // sidebarToggleMotion.init();
 
   NexT.motion.integrator = {
     queue : [],
@@ -199,10 +203,22 @@ $(document).ready(function() {
     },
     bootstrap: function() {
       this.next();
+    },
+    reset: function(value) {
+      this.cursor = value === undefined ? -1 : value;
     }
   };
 
   NexT.motion.middleWares = {
+    sidebarToggle: function(integrator) {
+      sidebarToggleMotion.init();
+      integrator.next();
+    },
+    reload: function(integrator) {
+      sidebarToggleMotion.reloadSidebar();
+      integrator.next();
+    },
+
     logo: function(integrator) {
       var sequence = [];
       var $brand = $('.brand');

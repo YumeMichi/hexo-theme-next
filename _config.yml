@@ -962,3 +962,7 @@ vendors:
 css: css
 js: js
 images: images
+
+# custom
+pjax:
+  enable: false

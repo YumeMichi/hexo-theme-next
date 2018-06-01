@@ -28,9 +28,10 @@ $(document).ready(function() {
   }
 
   initScrollSpy();
+  initToc();
 });
 
-$(document).ready(function() {
+function initToc() {
   var html = $('html');
   var TAB_ANIMATE_DURATION = 200;
   var hasVelocity = $.isFunction(html.velocity);
@@ -89,8 +90,7 @@ $(document).ready(function() {
   var display = CONFIG.page.sidebar;
   if (typeof display !== 'boolean') {
     // There's no definition sidebar in the page front-matter
-    var isSidebarCouldDisplay = CONFIG.sidebar.display === 'post'
-     || CONFIG.sidebar.display === 'always';
+    var isSidebarCouldDisplay = CONFIG.sidebar.display === 'always';
     var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
     display = isSidebarCouldDisplay && hasTOC;
   }
@@ -101,4 +101,4 @@ $(document).ready(function() {
       }
       : NexT.utils.displaySidebar();
   }
-});
+}
