@@ -93,7 +93,9 @@ $(document).ready(function() {
       this.toggleEl.on('mouseleave', this.mouseLeaveHandler.bind(this));
       this.sidebarEl.on('touchstart', this.touchstartHandler.bind(this));
       this.sidebarEl.on('touchend', this.touchendHandler.bind(this));
-      this.sidebarEl.on('touchmove', function(e) { e.preventDefault(); });
+      this.sidebarEl.on('touchmove', function(e) {
+        e.preventDefault();
+      });
 
       $(document)
         .on('sidebar.isShowing', function() {
@@ -107,7 +109,7 @@ $(document).ready(function() {
     },
     reloadSidebar: function() {
       this.sidebarEl = $('.sidebar');
-      this.isSidebarVisible ? this.showSidebar() : null;
+      this.isSidebarVisible ? this.showSidebar(0) : null;
     },
     clickHandler: function() {
       this.isSidebarVisible ? this.hideSidebar() : this.showSidebar();
@@ -136,7 +138,7 @@ $(document).ready(function() {
         this.clickHandler();
       }
     },
-    showSidebar: function() {
+    showSidebar: function(duration) {
       var self = this;
 
       sidebarToggleLines.close();
@@ -145,7 +147,7 @@ $(document).ready(function() {
         width: SIDEBAR_WIDTH
       }, {
         display : 'block',
-        duration: SIDEBAR_DISPLAY_DURATION,
+        duration: duration || SIDEBAR_DISPLAY_DURATION,
         begin   : function() {
           $('.sidebar .motion-element').velocity(
             'transition.slideRightIn',
