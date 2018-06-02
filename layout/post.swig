@@ -30,6 +30,7 @@
   {{ sidebar_template.render(true) }}
 {% endblock %}
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+{#move to preload#}
+{#{% block script_extra %}#}
+  {#{% include '_scripts/pages/post-details.swig' %}#}
+{#{% endblock %}#}

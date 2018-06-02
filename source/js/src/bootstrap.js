@@ -43,8 +43,8 @@ $(document).ready(function() {
     .add(NexT.motion.middleWares.menu)
     .add(NexT.motion.middleWares.sidebarToggle)
     .add(NexT.motion.middleWares.reload)
-    .add(NexT.motion.middleWares.postList)
-    .add(NexT.motion.middleWares.sidebar);
+    .add(NexT.motion.middleWares.postList);
+    // .add(NexT.motion.middleWares.sidebar);
 
   $(document).trigger('motion:before');
 

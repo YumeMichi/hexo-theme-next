@@ -31,6 +31,11 @@ $(document).ready(function() {
   initToc();
 });
 
+document.addEventListener("pjax:complete", function () {
+  initScrollSpy();
+  initToc();
+});
+
 function initToc() {
   var html = $('html');
   var TAB_ANIMATE_DURATION = 200;

@@ -85,7 +85,7 @@
 
   {% include '_scripts/vendors.swig' %}
   {% include '_scripts/commons.swig' %}
-
+  {% include '_scripts/pages/post-details.swig' %}
   {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
   {% include scheme_script %}
 
