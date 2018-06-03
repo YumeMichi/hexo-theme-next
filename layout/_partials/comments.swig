@@ -17,6 +17,16 @@
 
   {% elseif theme.disqus.enable %}
     <div class="comments" id="comments">
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = '{{ page.permalink }}';
+          this.page.identifier = '{{ page.path }}';
+          this.page.title = '{{ page.title| addslashes }}';
+          {% if __('disqus') !== 'disqus' -%}
+          this.language = '{{ __('disqus') }}';
+          {% endif -%}
+        };
+      </script>
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
@@ -55,4 +65,7 @@
     </div>
   {% endif %}
 
+{% else %}
+<div class="comments" id="comments">
+</div>
 {% endif %}
