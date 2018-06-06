@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  new APlayer({
+  window.aplayer = new APlayer({
     container: document.getElementById('aplayer'),
     fixed: true,
     // mini: false,
-    autoplay: true,
+    autoplay: localStorage.getItem('autoplay') === "true",
     theme: '#FADFA3',
     loop: 'all',
     order: 'random',
