@@ -107,5 +107,6 @@
   {% include '_third-party/bookmark.swig' %}
   {% include '_third-party/copy-code.swig' %}
   {% include '_third-party/pjax.swig' %}
+  {% include '_third-party/aplayer.swig' %}
 </body>
 </html>

@@ -1,3 +1,6 @@
 [submodule "source/lib/fancybox"]
 	path = source/lib/fancybox
 	url = https://github.com/theme-next/theme-next-fancybox3
+[submodule "source/lib/aplayer"]
+	path = source/lib/aplayer
+	url = https://github.com/MoePlayer/APlayer.git
