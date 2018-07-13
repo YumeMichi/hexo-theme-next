@@ -965,6 +965,6 @@ images: images
 
 # custom
 pjax:
-  enable: false
+  enable: true
 aplayer:
-  enable: false
+  enable: true
