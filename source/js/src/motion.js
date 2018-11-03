@@ -186,7 +186,7 @@ $(document).ready(function() {
       this.sidebarEl.trigger('sidebar.isHiding');
 
       // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
-      if (!$('.post-toc-wrap')) {
+      if ($('.post-toc-wrap')) {
         if ($('.site-overview-wrap').css('display') === 'block') {
           $('.post-toc-wrap').removeClass('motion-element');
         } else {
